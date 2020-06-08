@@ -1,11 +1,13 @@
+{% set name = "crayons" %}
 {% set version = "0.3.1" %}
 
+
 package:
-  name: crayons
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/c/crayons/crayons-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: dcb85b87aa03bb65bd3a073d012796b024cabeb086033e616759e2abb769440b
 
 build:
@@ -15,23 +17,25 @@ build:
 
 requirements:
   host:
-    - python
     - pip
-  run:
     - python
+  run:
     - colorama
+    - python
 
 test:
   imports:
     - crayons
-
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/MasterOdin/crayons
+  summary: TextUI colors for Python.
   license: MIT
   license_file: LICENSE
-  license_family: MIT
-  summary: TextUI colors for Python
 
 extra:
   recipe-maintainers:
