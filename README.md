@@ -5,9 +5,9 @@ Home: https://github.com/MasterOdin/crayons
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
-Summary: TextUI colors for Python
+Summary: TextUI colors for Python.
 
 
 
